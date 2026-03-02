@@ -4,23 +4,40 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS];
-    std::cout << '1-100 ertekek duplazasa'
-    for (int i = 0;)
+    // JAVÍTVA: Helyes változónév (N_ELEMENTS)
+    int *b = new int[N_ELEMENTS]; 
+
+    // JAVÍTVA: Kettős idézőjel és pontosvessző pótolva
+    std::cout << "1-100 ertekek duplazasa" << std::endl;
+
+    // JAVÍTVA: Hiányzó feltétel és léptetés pótolva
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        b[i] = i * 2;
+        b[i] = (i + 1) * 2;
     }
-    for (int i = 0; i; i++)
+
+    // JAVÍTVA: A feltétel javítva (i < N_ELEMENTS), hogy a ciklus lefusson és kiírjon
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:"
+        std::cout << "Ertek: " << b[i] << std::endl;
     }    
+
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag;
-    for (int i = 0; i < N_ELEMENTS, i++)
+
+    // JAVÍTVA: Inicializálás (0), és double típus a pontosabb osztáshoz
+    double atlag = 0; 
+
+    // JAVÍTVA: Vessző helyett pontosvessző a fejlécben
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i]
+        atlag += b[i]; // JAVÍTVA: Pontosvessző pótolva
     }
+
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
+
+    // JAVÍTVA: Memória felszabadítása a szivárgás elkerülése érdekében
+    delete[] b;
+
     return 0;
 }

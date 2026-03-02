@@ -38,6 +38,7 @@ int main()
 
     // JAVÍTVA: Memória felszabadítása a szivárgás elkerülése érdekében
     delete[] b;
+    std::cout << "Minden mukodik!" << std::endl;
 
     return 0;
 }
